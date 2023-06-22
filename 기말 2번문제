@@ -1,9 +1,0 @@
-unrated_movies = movie_data[~movie_data['movie_id'].isin(rating_data[rating_data['user_id'] == 4]['movie_id'])]
-anime_movies = unrated_movies[unrated_movies['genre'].str.contains('Animation')]
-
-# 상위 2개의 영화 추천
-top_anime_movies = anime_movies.nlargest(2, 'movie_id')
-recommended_movies = top_anime_movies[['title', 'genre']]
-
-# 추천된 영화 출력
-print(recommended_movies
